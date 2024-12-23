@@ -1,0 +1,8 @@
+name: Hprofile Actions
+on: workflow_dispatch
+jobs:
+  Testing:
+    runs-on: ubuntu-letest
+    steps:
+      - name: Testing workflow 
+        run: echo "You are doing a great job!"
