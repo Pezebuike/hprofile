@@ -1,6 +1,11 @@
 {
     "java.compile.nullAnalysis.mode": "automatic",
     "cSpell.words": [
-        "Hprofile"
+        "Dsonar",
+        "Hprofile",
+        "jacoco",
+        "Qube",
+        "temurin",
+        "visualpathit"
     ]
 }
