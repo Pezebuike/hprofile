@@ -34,16 +34,17 @@ jobs:
    
     # Run sonar-scanner
       - name: SonarQube Scan
-        run: sonar-scanner
-           -Dsonar.host.url=${{ secrets.SONAR_URL }}
-           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-           -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
-           -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
-           -Dsonar.sources=src/
-           -Dsonar.junit.reportsPath=target/surefire-reports/ 
-           -Dsonar.jacoco.reportsPath=target/jacoco.exec 
-           -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml
-           -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/
+        run: |
+          sonar-scanner \
+          -Dsonar.host.url=${{ secrets.SONAR_URL }} \ # Specifies the SonarQube server URL
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }} \ # Authentication token for SonarQube
+          -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }} \ # SonarQube organization key
+          -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }} \ # SonarQube project key
+          -Dsonar.sources=src/ \ # Directory containing the source code to be analyzed
+          -Dsonar.junit.reportsPath=target/surefire-reports/ \ # Path to JUnit test reports
+          -Dsonar.jacoco.reportsPath=target/jacoco.exec \ # Path to JaCoCo code coverage report
+          -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml \ # Path to Checkstyle report
+          -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/ # Path to compiled Java binaries
 
       # Check the Quality Gate status.
       - name: SonarQube Quality Gate check
