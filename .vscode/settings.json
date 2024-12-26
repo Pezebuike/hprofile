@@ -1,11 +1,17 @@
 {
     "java.compile.nullAnalysis.mode": "automatic",
     "cSpell.words": [
+        "actapp",
+        "DEFINATION",
         "Dsonar",
         "Hprofile",
         "jacoco",
         "Qube",
+        "REPROSITORY",
+        "taskdeffile",
         "temurin",
-        "visualpathit"
+        "visualpathit",
+        "vproapp",
+        "vprofile"
     ]
 }
